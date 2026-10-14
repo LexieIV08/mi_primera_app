@@ -1,31 +1,21 @@
-import { NativeTabs } from 'expo-router/unstable-native-tabs';
-import { useColorScheme } from 'react-native';
 
-import { Colors } from '@/constants/theme';
+import { NativeTabs } from 'expo-router/unstable-native-tabs';
 
 export default function AppTabs() {
-  const scheme = useColorScheme();
-  const colors = Colors[scheme === 'unspecified' ? 'light' : scheme];
-
   return (
-    <NativeTabs
-      backgroundColor={colors.background}
-      indicatorColor={colors.backgroundElement}
-      labelStyle={{ selected: { color: colors.text } }}>
-      <NativeTabs.Trigger name="index">
-        <NativeTabs.Trigger.Label>Home</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon
-          src={require('@/assets/images/tabIcons/home.png')}
-          renderingMode="template"
-        />
+    <NativeTabs>
+      <NativeTabs.Trigger name="registro">
+        <NativeTabs.Trigger.Label selectedStyle={{ color: '#FFFFFF' }}>
+          Registro
+        </NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf="plus.circle" />
       </NativeTabs.Trigger>
 
-      <NativeTabs.Trigger name="explore">
-        <NativeTabs.Trigger.Label>Explore</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon
-          src={require('@/assets/images/tabIcons/explore.png')}
-          renderingMode="template"
-        />
+      <NativeTabs.Trigger name="inventario">
+        <NativeTabs.Trigger.Label selectedStyle={{ color: '#FFFFFF' }}>
+          Inventario
+        </NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf="list.bullet" />
       </NativeTabs.Trigger>
     </NativeTabs>
   );
