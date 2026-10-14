@@ -43,7 +43,6 @@ type DatosAire = {
 // ======================================================
 // SECCIÓN 2. LISTA DE CIUDADES
 // Cada ciudad tiene su nombre y coordenadas geográficas.
-// Local (GPS) utiliza la ubicación del dispositivo.
 // ======================================================
 
 const CIUDADES_PRUEBA: Ciudad[] = [
